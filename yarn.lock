@@ -1352,6 +1352,13 @@
     pkg-types "^1.2.1"
     semver "^7.6.3"
 
+"@openmeteo/sdk@^1.23.0":
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/@openmeteo/sdk/-/sdk-1.25.0.tgz#4841de588ac09a45e152adc74b8c0659630742f9"
+  integrity sha512-tpX2d/HOPn95NIU+/IU1VFFzOM3m/PqSpPSJnWuGQGEW5GogB50xUOUMrsD2N/6LCMy12e3cZEQd6c3Gb0lmtA==
+  dependencies:
+    flatbuffers "^25.9.23"
+
 "@oxc-minify/binding-android-arm-eabi@0.110.0":
   version "0.110.0"
   resolved "https://registry.yarnpkg.com/@oxc-minify/binding-android-arm-eabi/-/binding-android-arm-eabi-0.110.0.tgz#c7a4462837f07c9ab82bc9d2094dc2bc5b456a7d"
@@ -3783,6 +3790,11 @@ fill-range@^7.1.1:
   dependencies:
     to-regex-range "^5.0.1"
 
+flatbuffers@^25.9.23:
+  version "25.9.23"
+  resolved "https://registry.yarnpkg.com/flatbuffers/-/flatbuffers-25.9.23.tgz#346811557fe9312ab5647535e793c761e9c81eb1"
+  integrity sha512-MI1qs7Lo4Syw0EOzUl0xjs2lsoeqFku44KpngfIduHBYvzm8h2+7K8YMQh1JtVVVrUvhLpNwqVi4DERegUJhPQ==
+
 fontaine@0.7.0, fontaine@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/fontaine/-/fontaine-0.7.0.tgz#3b2ea6cefff86a202dc7cabd73abc3adb8b7a376"
@@ -5084,6 +5096,14 @@ open@^8.0.0:
     define-lazy-prop "^2.0.0"
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
+
+openmeteo@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/openmeteo/-/openmeteo-1.2.3.tgz#754a4941d78301ff7fc47a384512c3f4a1821071"
+  integrity sha512-3updmgCMnCAAjAgV3RfhMdIBPi/43RtbjQ4CizHGn52RP9SpgmVCDRpun+Ex75NG3jTF3pZp+d1BPlP9DWMHiQ==
+  dependencies:
+    "@openmeteo/sdk" "^1.23.0"
+    flatbuffers "^25.9.23"
 
 orderedmap@^2.0.0:
   version "2.1.1"
