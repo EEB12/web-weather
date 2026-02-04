@@ -2,7 +2,7 @@
 import { fetchWeatherApi } from "openmeteo";
 
 const items = ref(['Backlog', 'Todo', 'In Progress', 'Done'])
-const value = ref('')
+const searchValue = ref('')
 
 // Weather data
 const weatherData = ref({
@@ -83,6 +83,29 @@ const fetchWeather = async (lat: number, lon: number) => {
 // Fetch weather for default location (Hanoi)
 await fetchWeather(21.0283334, 105.8540410)
 
+const searchLocation = async (query: string) => {
+  const response = await fetch(`/api/geocode?q=${encodeURIComponent(query)}`)
+  
+  if (!response.ok) {
+    console.error('Geocode error:', response.status)
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  
+  return await response.json()
+}
+
+// Test on client side
+onMounted(async () => {
+  try {
+    const results = await searchLocation("curepipe")
+    console.log('Search results:', results)
+  } catch (error) {
+    console.error('Search failed:', error)
+  }
+})
+watch(()=>searchValue,()=>{
+
+})
 </script>
 
 <template>
@@ -95,7 +118,7 @@ await fetchWeather(21.0283334, 105.8540410)
       <div class="w-3/4 flex flex-col">
          <UInputMenu 
            class="w-full !rounded-3xl mb-5 " 
-           v-model="value" 
+           v-model="searchValue" 
            :items="items" 
            variant="subtle" 
            trailing-icon="i-lucide-search"
