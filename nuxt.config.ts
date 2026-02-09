@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/ui',
+      '@vueuse/nuxt',
   ],
   vite: {
     plugins: [
